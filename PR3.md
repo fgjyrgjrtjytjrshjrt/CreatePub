@@ -4,28 +4,43 @@
 
 
 '''cpp
-#include <iostream.h>
-#include <conio.h>
+#include <iostream>
+
 main( )
-{ const int n = 5;
-  int x[n], i, k;  int а;       /* а — рабочая переменная для перестановки местами двух элементов */
-//----------- ввод исходного массива
-  for (і = 0; і < n; i++)
-   сіn >> *(x+i);
-//----------- вывод на экран исходного массива
-  cout << "\n massiv х[n] \n";
-  for (i = 0; i < n; i++) 
-  cout << *(x+i) << " "; 
-//------------- сортировка no возрастанию
-  for (k = 1; k < n; k++)       // цикл шагов сортировки
-    for (і = 0; і < n-k; і++)    /* цикл сравненья элементов и их перестановки */
-    if (*(x+i) > *(x+i+1))   
-    { а = *(x+i);
-     *(x+i) = *(x+i+1);
-     *(x+i+1) = a; }
-  cout << "\n Result sortirovki massiva " << endl;
-  for (i=0; і < n; i++) 
-  cout << *(x+i) << " ";
-  getch();  
+setlocale(LC_ALL, "russian"); 
+    const int size = 5;
+    int mas[size];
+    int tmp;
+    // Введення даних у масив користувачем
+    for (int i = 0; i < size; i++){
+        cout << "Введіть " << i << " елемент масиву ";
+        cin >> mas[i];
+    }
+    // Виведення масиву на екран
+    for (int i = 0; i < size; i++){
+        cout << "Елемент з індексом " << i << " має значення " << mas[i] << endl;
+    }
+    // Сортування масиву бульбашкою
+    int x = 0;
+    for (int i = size - 1; i >= x; i--)
+    {
+        for (int j = size - 1; j >= x; j--)    {
+            if (mas[j] < mas[j-1])    {
+                tmp = mas[j];
+                mas[j] = mas[j-1];
+                mas[j-1] = tmp;
+                cout << "елемент " << j << " помінявся з елементом " << j - 1 << " << " << endl; // наводка
+                                    }
+
+                                            }
+        x++;
+    }
+    // виведення відсортованого масиву
+    cout << "Виведення відсортованого масиву" << endl;
+    for (int i = 0; i < size; i++){
+        cout << "Елемент з індексом " << i << " має значення " << mas[i] << endl;
+    }
+    system("pause");
+    return 0;
 }
 '''
