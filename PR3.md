@@ -1,4 +1,31 @@
 # PR3
 ## Algorithms Sort Massive C++ 
 
-![alt](https://www.google.com/imgres?imgurl=https%3A%2F%2Fisocpp.org%2Ffiles%2Fimg%2Farkanoid.PNG&tbnid=nTk48FtKn75gPM&vet=12ahUKEwiYi4601cyBAxWoFBAIHWmFDGMQMygNegQIARBu..i&imgrefurl=https%3A%2F%2Fisocpp.org%2Fblog%2F2013%2F11%2Farkanoid&docid=lAmt_TVffJpxMM&w=561&h=537&q=%D0%A1%2B%2B%20%D1%81%D1%89%D0%B2%D1%83&ved=2ahUKEwiYi4601cyBAxWoFBAIHWmFDGMQMygNegQIARBu)
+
+
+'''cpp
+#include <iostream.h>
+#include <conio.h>
+main( )
+{ const int n = 5;
+  int x[n], i, k;  int а;       /* а — рабочая переменная для перестановки местами двух элементов */
+//----------- ввод исходного массива
+  for (і = 0; і < n; i++)
+   сіn >> *(x+i);
+//----------- вывод на экран исходного массива
+  cout << "\n massiv х[n] \n";
+  for (i = 0; i < n; i++) 
+  cout << *(x+i) << " "; 
+//------------- сортировка no возрастанию
+  for (k = 1; k < n; k++)       // цикл шагов сортировки
+    for (і = 0; і < n-k; і++)    /* цикл сравненья элементов и их перестановки */
+    if (*(x+i) > *(x+i+1))   
+    { а = *(x+i);
+     *(x+i) = *(x+i+1);
+     *(x+i+1) = a; }
+  cout << "\n Result sortirovki massiva " << endl;
+  for (i=0; і < n; i++) 
+  cout << *(x+i) << " ";
+  getch();  
+}
+'''
